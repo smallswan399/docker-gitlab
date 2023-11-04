@@ -11,14 +11,15 @@ services:
 
   postgresql:
     restart: always
-    image: sameersbn/postgresql:12-20200524
+    image: postgres:16-bookworm
     volumes:
     - postgresql-data:/var/lib/postgresql:Z
     environment:
-    - DB_USER=gitlab
-    - DB_PASS=password123!@#
-    - DB_NAME=gitlabhq_production
-    - DB_EXTENSION=pg_trgm,btree_gist
+    - POSTGRES_USER=gitlab
+    - POSTGRES_PASSWORD=password123!@#
+    - POSTGRES_DB=gitlabhq_production
+    ports:
+      - 5433:5432
 
   gitlab:
     restart: always
