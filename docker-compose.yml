@@ -16,7 +16,7 @@ services:
     - postgresql-data:/var/lib/postgresql:Z
     environment:
     - DB_USER=gitlab
-    - DB_PASS=password
+    - DB_PASS=password123!@#
     - DB_NAME=gitlabhq_production
     - DB_EXTENSION=pg_trgm,btree_gist
 
@@ -44,7 +44,7 @@ services:
     - DB_HOST=postgresql
     - DB_PORT=5432
     - DB_USER=gitlab
-    - DB_PASS=password
+    - DB_PASS=password123!@#
     - DB_NAME=gitlabhq_production
 
     - REDIS_HOST=redis
